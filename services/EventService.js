@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import { state } from "../store/Restaurants.js";
 const apiClient = axios.create({
   baseURL: "https://developers.zomato.com/api/v2.1",
   headers: {
@@ -16,13 +16,8 @@ export default {
       "/cuisines?lat=-77596659.4184915&lon=-77596659.4184915&city_id=ipsum sunt labore ex"
     );
   },
-  Test() {
-    return apiClient.get(
-      "/search?cuisines=" +
-        store.state.selectedLocations +
-        "&category=" +
-        store.state.selectedCategories
-    );
+  Results() {
+    return apiClient.get("/search?cuisines=" + 1 + "&category= " + 1);
   },
   GetRestaurant() {
     return apiClient.get(
@@ -30,3 +25,6 @@ export default {
     );
   },
 };
+// Cannot access 'state' before initialization
+// create component then fetch data
+console.log(state.SelectedCategories);

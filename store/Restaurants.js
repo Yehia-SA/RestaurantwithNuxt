@@ -1,10 +1,10 @@
 import EventService from "../services/EventService";
-export const strict = false;
 
 export const state = () => ({
   categories: [],
   cuisines: [],
-  message: [],
+  SelectedCategories: [1],
+  SelectedCuisines: [],
 });
 export const mutations = {
   categories(state, categories) {
@@ -13,8 +13,11 @@ export const mutations = {
   cuisines(state, cuisines) {
     state.cuisines = cuisines;
   },
-  updateMessage(state, message) {
-    state.message = message;
+  updateCategories(state, SelectedCategories) {
+    state.SelectedCategories = SelectedCategories;
+  },
+  updateCuisines(state, SelectedCuisines) {
+    state.SelectedCuisines = SelectedCuisines;
   },
 };
 export const actions = {
@@ -26,6 +29,12 @@ export const actions = {
   fetchcuisines({ commit }) {
     return EventService.GetCusinis().then((response) => {
       commit("cuisines", response.data.cuisines);
+    });
+  },
+  Results({ state }) {
+    return EventService.Results().then((response) => {
+      let x = response.data.restaurants;
+      console.log(x);
     });
   },
 };
