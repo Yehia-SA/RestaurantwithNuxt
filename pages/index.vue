@@ -1,39 +1,42 @@
 <template>
-  <div>
-    <h3>Categories :</h3>
-    <div v-for="item in categories" :key="item.id">
-      <input
-        type="checkbox"
-        :name="item.categories.name"
-        :value="item.categories.id"
-        :id="item.categories.name"
-        v-model="SelectedCategories"
-      />
-      <label :for="item.categories.name">{{ item.categories.name }}</label>
+  <div class="main">
+    <div class="categories">
+      <ul>
+        <h3>Categories :</h3>
+        <li v-for="item in categories" :key="item.id">
+          <input
+            type="checkbox"
+            :name="item.categories.name"
+            :value="item.categories.id"
+            :id="item.categories.name"
+            v-model="SelectedCategories"
+          />
+          <label :for="item.categories.name">{{ item.categories.name }}</label>
+        </li>
+      </ul>
     </div>
-    <h3>cuisines :</h3>
-
-    <div>{{ SelectedCategories }}</div>
-    <div v-for="item in cuisines" :key="item.id">
-      <input
-        type="checkbox"
-        :name="item.cuisine.cuisine_name"
-        :value="item.cuisine.cuisine_id"
-        :id="item.cuisine.cuisine_name"
-        v-model="SelectedCuisines"
-      />
-      <label :for="item.cuisine.cuisine_name">{{
-        item.cuisine.cuisine_name
-      }}</label>
+    <div class="cuisines">
+      <ul>
+        <h3>cuisines :</h3>
+        <div class="parent">
+          <div class="child" v-for="item in cuisines" :key="item.id">
+            <input
+              type="checkbox"
+              :name="item.cuisine.cuisine_name"
+              :value="item.cuisine.cuisine_id"
+              :id="item.cuisine.cuisine_name"
+              v-model="SelectedCuisines"
+            />
+            <label :for="item.cuisine.cuisine_name">{{
+              item.cuisine.cuisine_name
+            }}</label>
+          </div>
+        </div>
+      </ul>
     </div>
-
-    <div class="test">
-      <result-list />
-      <!-- {{ $store.state.Restaurants.categories }} -->
-    </div>
+    <ResultList />
   </div>
 </template>
-
 <script>
 import ResultList from "../components/ResultList.vue";
 export default {
@@ -79,3 +82,29 @@ export default {
   },
 };
 </script>
+<style scoped>
+.main {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.categories .cuisines {
+  margin: 10px;
+}
+
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+}
+.child {
+  flex-basis: 25%;
+}
+
+/* .cuisines {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+} */
+</style>

@@ -1,5 +1,4 @@
 import axios from "axios";
-import { state } from "../store/Restaurants.js";
 const apiClient = axios.create({
   baseURL: "https://developers.zomato.com/api/v2.1",
   headers: {
@@ -27,6 +26,3 @@ export default {
     );
   },
 };
-// Cannot access 'state' before initialization
-// create component then fetch data
-// console.log(state.SelectedCategories);

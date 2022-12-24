@@ -1,5 +1,5 @@
 <template>
-  <h2>Result Component</h2>
+  <div>Empty</div>
 </template>
 <script>
 export default {
@@ -8,8 +8,7 @@ export default {
       this.$store.dispatch("Restaurants/Results");
     },
     "$store.state.Restaurants.SelectedCuisines": function () {
-      // this.$store.dispatch("Restaurants/Results");
-      // console.log(state());
+      this.$store.dispatch("Restaurants/Results");
     },
   },
 };

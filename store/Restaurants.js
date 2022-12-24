@@ -43,7 +43,6 @@ export const actions = {
       commit("RestaurantsResults", response.data.restaurants);
       let x = response.data.restaurants;
       console.log(x);
-      // console.log(state.categories);
     });
   },
 };
