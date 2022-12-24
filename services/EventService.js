@@ -16,8 +16,10 @@ export default {
       "/cuisines?lat=-77596659.4184915&lon=-77596659.4184915&city_id=ipsum sunt labore ex"
     );
   },
-  Results() {
-    return apiClient.get("/search?cuisines=" + 1 + "&category= " + 1);
+  Results(Cuisines, Categories) {
+    return apiClient.get(
+      "/search?cuisines=" + Cuisines + "&category= " + Categories
+    );
   },
   GetRestaurant() {
     return apiClient.get(
@@ -27,4 +29,4 @@ export default {
 };
 // Cannot access 'state' before initialization
 // create component then fetch data
-console.log(state.SelectedCategories);
+// console.log(state.SelectedCategories);

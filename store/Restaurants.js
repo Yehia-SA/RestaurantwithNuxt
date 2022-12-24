@@ -3,8 +3,9 @@ import EventService from "../services/EventService";
 export const state = () => ({
   categories: [],
   cuisines: [],
-  SelectedCategories: [1],
+  SelectedCategories: [],
   SelectedCuisines: [],
+  Restaurants: {},
 });
 export const mutations = {
   categories(state, categories) {
@@ -19,6 +20,9 @@ export const mutations = {
   updateCuisines(state, SelectedCuisines) {
     state.SelectedCuisines = SelectedCuisines;
   },
+  RestaurantsResults(state, Restaurants) {
+    state.Restaurants = Restaurants;
+  },
 };
 export const actions = {
   fetchcategories({ commit }) {
@@ -31,10 +35,15 @@ export const actions = {
       commit("cuisines", response.data.cuisines);
     });
   },
-  Results({ state }) {
-    return EventService.Results().then((response) => {
+  Results({ commit, state }) {
+    return EventService.Results(
+      state.SelectedCuisines,
+      state.SelectedCategories
+    ).then((response) => {
+      commit("RestaurantsResults", response.data.restaurants);
       let x = response.data.restaurants;
       console.log(x);
+      // console.log(state.categories);
     });
   },
 };

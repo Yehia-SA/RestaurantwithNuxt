@@ -26,16 +26,25 @@
         item.cuisine.cuisine_name
       }}</label>
     </div>
+
+    <div class="test">
+      <result-list />
+      <!-- {{ $store.state.Restaurants.categories }} -->
+    </div>
   </div>
 </template>
 
 <script>
+import ResultList from "../components/ResultList.vue";
 export default {
+  components: {
+    ResultList,
+  },
   async fetch({ store, error }) {
     try {
       await store.dispatch("Restaurants/fetchcategories");
       await store.dispatch("Restaurants/fetchcuisines");
-      await store.dispatch("Restaurants/Results");
+      // await store.dispatch("Restaurants/Results");
     } catch (e) {
       error({
         statusCode: 503,
