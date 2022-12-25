@@ -1,5 +1,4 @@
 import EventService from "../services/EventService";
-
 export const state = () => ({
   categories: [],
   cuisines: [],
