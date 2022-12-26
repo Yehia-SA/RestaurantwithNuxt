@@ -30,6 +30,7 @@
         </div>
       </div>
     </div>
+    <div class="deleted">sds</div>
   </div>
 </template>
 <script>
