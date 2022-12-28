@@ -6,6 +6,7 @@ export const state = () => ({
   SelectedCuisines: [],
   Restaurants: {},
   Res_id: [],
+  RestaurantDetalis: {},
 });
 
 export const mutations = {
@@ -26,6 +27,9 @@ export const mutations = {
   },
   RestaurantID(state, Res_id) {
     state.Res_id = Res_id;
+  },
+  RestaurantDetalis(state, ResturantData) {
+    state.RestaurantDetalis = ResturantData;
   },
 };
 export const actions = {
@@ -52,8 +56,7 @@ export const actions = {
   GetRestaurantByID({ commit, state }) {
     return EventService.GetRestaurant(state.Res_id).then((response) => {
       console.log(response.data);
-      commit("RestaurantID", response);
-      let x = response.data.restaurants;
+      commit("RestaurantDetalis", response.data);
     });
   },
 };
