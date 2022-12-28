@@ -1,8 +1,8 @@
 <template>
-  <div class="main">
+  <div class="Filter">
+    <h3>Categories :</h3>
     <div class="categories">
-      <h3>Categories :</h3>
-      <div v-for="item in categories" :key="item.id">
+      <div class="child" v-for="item in categories" :key="item.id">
         <input
           type="checkbox"
           :name="item.categories.name"
@@ -13,24 +13,21 @@
         <label :for="item.categories.name">{{ item.categories.name }}</label>
       </div>
     </div>
+    <h3>cuisines :</h3>
     <div class="cuisines">
-      <h3>cuisines :</h3>
-      <div class="parent">
-        <div class="child" v-for="item in cuisines" :key="item.id">
-          <input
-            type="checkbox"
-            :name="item.cuisine.cuisine_name"
-            :value="item.cuisine.cuisine_id"
-            :id="item.cuisine.cuisine_name"
-            v-model="SelectedCuisines"
-          />
-          <label :for="item.cuisine.cuisine_name">{{
-            item.cuisine.cuisine_name
-          }}</label>
-        </div>
+      <div class="child" v-for="item in cuisines" :key="item.id">
+        <input
+          type="checkbox"
+          :name="item.cuisine.cuisine_name"
+          :value="item.cuisine.cuisine_id"
+          :id="item.cuisine.cuisine_name"
+          v-model="SelectedCuisines"
+        />
+        <label :for="item.cuisine.cuisine_name">{{
+          item.cuisine.cuisine_name
+        }}</label>
       </div>
     </div>
-    <div class="deleted">sds</div>
   </div>
 </template>
 <script>
@@ -63,7 +60,18 @@ export default {
 </script>
 <style scoped>
 * {
-  margin: 0;
-  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cuisines {
+  display: flex;
+  flex-wrap: wrap;
+}
+.child {
+  flex-basis: 20%;
 }
 </style>

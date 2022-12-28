@@ -20,9 +20,8 @@ export default {
       "/search?cuisines=" + Cuisines + "&category= " + Categories
     );
   },
-  GetRestaurant() {
-    return apiClient.get(
-      "/search?start=0&count=100&category=&priceRange[]=1&priceRange[]=4&ratingRange[]=0&ratingRange[]=5"
-    );
+  // GetRestaurantByID
+  GetRestaurant(id) {
+    return apiClient.get("/restaurant?res_id=" + id);
   },
 };
