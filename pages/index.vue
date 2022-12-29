@@ -2,15 +2,18 @@
   <div class="main">
     <RestaurantFilter />
     <ResultList />
+    <SelectedRestaurant />
   </div>
 </template>
 <script>
 import RestaurantFilter from "../components/RestaurantFilter.vue";
 import ResultList from "../components/ResultList.vue";
+import SelectedRestaurant from "../components/SelectedRestaurant.vue";
 export default {
   components: {
     RestaurantFilter,
     ResultList,
+    SelectedRestaurant,
   },
   async fetch({ store, error }) {
     try {

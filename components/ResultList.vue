@@ -33,3 +33,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+* {
+  background-color: aliceblue;
+}
+a {
+  text-decoration: none;
+}
+</style>

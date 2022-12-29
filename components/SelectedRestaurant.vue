@@ -1,4 +1,18 @@
-<template></template>
+<template>
+  <div>
+    <h3>{{ SelectedRestaurant.name }}</h3>
+    <img :src="SelectedRestaurant.featured_image" alt="" />
+    <h3>{{ SelectedRestaurant.phone_numbers }}</h3>
+    <h3>{{ SelectedRestaurant.timings }}</h3>
+    <h3>{{ SelectedRestaurant.location.address }}</h3>
+  </div>
+</template>
 <script>
-export default {};
+export default {
+  computed: {
+    SelectedRestaurant() {
+      return this.$store.state.Restaurants.RestaurantDetalis;
+    },
+  },
+};
 </script>

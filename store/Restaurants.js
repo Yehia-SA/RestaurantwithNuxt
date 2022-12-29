@@ -55,7 +55,7 @@ export const actions = {
   },
   GetRestaurantByID({ commit, state }) {
     return EventService.GetRestaurant(state.Res_id).then((response) => {
-      console.log(response.data);
+      // console.log(response.data);
       commit("RestaurantDetalis", response.data);
     });
   },
