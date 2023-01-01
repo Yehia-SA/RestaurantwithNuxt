@@ -1,5 +1,5 @@
 {
-  "name": "Restarunt-Viewer",
+  "name": "restarunt-viewer",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -12,9 +12,14 @@
     "@nuxtjs/axios": "^5.13.6",
     "core-js": "^3.25.3",
     "nuxt": "^2.15.8",
+    "style-loader": "^3.3.1",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "node-sass": "^8.0.0",
+    "sass": "^1.57.1",
+    "sass-loader": "10"
+  }
 }

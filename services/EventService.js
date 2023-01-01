@@ -15,9 +15,15 @@ export default {
       "/cuisines?lat=-77596659.4184915&lon=-77596659.4184915&city_id=ipsum sunt labore ex"
     );
   },
-  Results(Cuisines, Categories) {
+  Results(Cuisines, Categories, start) {
     return apiClient.get(
-      "/search?cuisines=" + Cuisines + "&category= " + Categories
+      "/search?cuisines=" +
+        Cuisines +
+        "&category= " +
+        Categories +
+        "&start= " +
+        start +
+        "count = 100"
     );
   },
   // GetRestaurantByID

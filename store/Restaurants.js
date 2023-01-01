@@ -7,8 +7,8 @@ export const state = () => ({
   Restaurants: {},
   Res_id: [],
   RestaurantDetalis: {},
+  start: 0,
 });
-
 export const mutations = {
   categories(state, categories) {
     state.categories = categories;
@@ -31,6 +31,12 @@ export const mutations = {
   RestaurantDetalis(state, ResturantData) {
     state.RestaurantDetalis = ResturantData;
   },
+  increase(state) {
+    state.start = state.start + 20;
+  },
+  Decrease(state) {
+    state.start = state.start - 20;
+  },
 };
 export const actions = {
   fetchcategories({ commit }) {
@@ -46,7 +52,8 @@ export const actions = {
   Results({ commit, state }) {
     return EventService.Results(
       state.SelectedCuisines,
-      state.SelectedCategories
+      state.SelectedCategories,
+      state.start
     ).then((response) => {
       commit("RestaurantsResults", response.data.restaurants);
       // let x = response.data.restaurants;

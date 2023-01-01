@@ -1,12 +1,14 @@
 <template>
   <div>
-    <div v-for="item in Restaurants" :key="item.id">
+    <div class="Results" v-for="item in Restaurants" :key="item.id">
       <a href="" @click.prevent="index(item.restaurant.id)">{{
         item.restaurant.name
       }}</a>
 
       <h2>==========</h2>
     </div>
+    <button @click="Decrease">Back</button>
+    <button @click="increase">Get More Results</button>
   </div>
 </template>
 <script>
@@ -24,8 +26,15 @@ export default {
       this.$store.commit("Restaurants/RestaurantID", id);
       this.$store.dispatch("Restaurants/GetRestaurantByID");
     },
+    increase() {
+      this.$store.commit("Restaurants/increase");
+      this.$store.dispatch("Restaurants/Results");
+    },
+    Decrease() {
+      this.$store.commit("Restaurants/Decrease");
+      this.$store.dispatch("Restaurants/Results");
+    },
   },
-
   computed: {
     Restaurants() {
       return this.$store.state.Restaurants.Restaurants;
@@ -33,11 +42,11 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 * {
   background-color: aliceblue;
-}
-a {
-  text-decoration: none;
+  a {
+    text-decoration: none;
+  }
 }
 </style>
