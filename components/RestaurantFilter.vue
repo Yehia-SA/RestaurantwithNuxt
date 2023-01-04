@@ -1,7 +1,7 @@
 <template>
   <div class="Filter">
-    <h3>Categories :</h3>
     <div class="categories">
+      <h3>cuisines :</h3>
       <div class="child" v-for="item in categories" :key="item.id">
         <input
           type="checkbox"
@@ -13,8 +13,8 @@
         <label :for="item.categories.name">{{ item.categories.name }}</label>
       </div>
     </div>
-    <h3>cuisines :</h3>
     <div class="cuisines">
+      <h3>cuisines :</h3>
       <div class="child" v-for="item in cuisines" :key="item.id">
         <input
           type="checkbox"
@@ -59,19 +59,25 @@ export default {
 };
 </script>
 <style scoped>
-* {
-  font-family: Arial, Helvetica, sans-serif;
+.Filter {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr;
+  gap: 17px 10px;
+}
+.categories {
+  flex-direction: column;
 }
 
-.categories {
-  display: flex;
-  flex-wrap: wrap;
-}
-.cuisines {
+.cuisines:nth-child(2) {
   display: flex;
   flex-wrap: wrap;
 }
 .child {
+  margin: 5px;
   flex-basis: 20%;
+}
+h3 {
+  display: block;
+  margin: 0;
 }
 </style>
