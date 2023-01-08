@@ -15,18 +15,19 @@
     </div>
     <div class="cuisines">
       <h3>cuisines :</h3>
-
-      <div class="child" v-for="item in cuisines" :key="item.id">
-        <input
-          type="checkbox"
-          :name="item.cuisine.cuisine_name"
-          :value="item.cuisine.cuisine_id"
-          :id="item.cuisine.cuisine_name"
-          v-model="SelectedCuisines"
-        />
-        <label :for="item.cuisine.cuisine_name">{{
-          item.cuisine.cuisine_name
-        }}</label>
+      <div class="options-container">
+        <div class="child" v-for="item in cuisines" :key="item.id">
+          <input
+            type="checkbox"
+            :name="item.cuisine.cuisine_name"
+            :value="item.cuisine.cuisine_id"
+            :id="item.cuisine.cuisine_name"
+            v-model="SelectedCuisines"
+          />
+          <label :for="item.cuisine.cuisine_name">{{
+            item.cuisine.cuisine_name
+          }}</label>
+        </div>
       </div>
     </div>
   </div>
@@ -64,14 +65,25 @@ export default {
   display: inline-flex;
 }
 .categories {
-  flex-direction: column;
   grid-area: categories;
 }
+
 .cuisines {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   width: 1000px;
 }
+
+.options-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.options-container div {
+  flex-basis: 20%;
+}
+
 h3 {
   display: block;
   margin: 0;

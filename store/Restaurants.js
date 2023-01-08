@@ -24,6 +24,7 @@ export const mutations = {
   },
   RestaurantsResults(state, Restaurants) {
     state.Restaurants = Restaurants;
+    // state.Restaurants = { ...state.Restaurants, Restaurants };
   },
   RestaurantID(state, Res_id) {
     state.Res_id = Res_id;
