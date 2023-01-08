@@ -1,7 +1,7 @@
 <template>
   <div class="main">
-    <RestaurantFilter />
-    <ResultList />
+    <RestaurantFilter class="RestaurantFilter" />
+    <result-list></result-list>
     <SelectedRestaurant />
   </div>
 </template>
@@ -28,4 +28,14 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.main {
+  display: grid;
+  grid-template-columns: repeat(10, auto);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: "RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter ";
+  .RestaurantFilter {
+    grid-area: RestaurantFilter;
+  }
+}
+</style>

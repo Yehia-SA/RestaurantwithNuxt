@@ -7,8 +7,10 @@
 
       <h2>==========</h2>
     </div>
-    <button @click="Decrease">Back</button>
-    <button @click="increase">Get More Results</button>
+    <div class="buttons">
+      <button @click="Decrease">Back</button>
+      <button @click="increase">Get More Results</button>
+    </div>
   </div>
 </template>
 <script>
