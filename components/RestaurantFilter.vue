@@ -30,6 +30,12 @@
         </div>
       </div>
     </div>
+    <div class="rate">
+      <h4>Select rate of the restaurant</h4>
+      <p>0 is low and 5 is high</p>
+
+      <input type="range" step="1" max="5" />
+    </div>
   </div>
 </template>
 <script>
@@ -61,6 +67,15 @@ export default {
 };
 </script>
 <style scoped>
+* {
+  background-color: #eee;
+}
+.rate {
+  align-self: center;
+}
+.rate input {
+  width: 300px;
+}
 .Filter {
   display: inline-flex;
 }
@@ -71,7 +86,7 @@ export default {
 .cuisines {
   display: flex;
   flex-direction: column;
-  width: 1000px;
+  width: 1500px;
 }
 
 .options-container {
@@ -82,10 +97,5 @@ export default {
 
 .options-container div {
   flex-basis: 20%;
-}
-
-h3 {
-  display: block;
-  margin: 0;
 }
 </style>

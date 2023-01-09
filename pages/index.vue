@@ -33,9 +33,21 @@ export default {
   display: grid;
   grid-template-columns: repeat(10, auto);
   grid-template-rows: repeat(2, auto);
+  gap: 10px 20px;
   grid-template-areas: "RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter ";
   .RestaurantFilter {
     grid-area: RestaurantFilter;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    background-color: yellow;
+    grid-template-areas: "RestaurantFilter   ";
+  }
+  .RestaurantFilter {
+    display: none;
   }
 }
 </style>

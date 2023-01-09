@@ -1,11 +1,10 @@
 <template>
   <div>
+     <h2>Results</h2>
     <div class="Results" v-for="item in Restaurants" :key="item.id">
       <a href="" @click.prevent="index(item.restaurant.id)">{{
         item.restaurant.name
       }}</a>
-
-      <h2>==========</h2>
     </div>
     <div class="buttons">
       <button @click="Decrease">Back</button>
@@ -50,5 +49,13 @@ export default {
   a {
     text-decoration: none;
   }
+  .Results a:hover {
+    color: rgb(27, 175, 47);
+  }
+}
+
+.Results {
+  border-top: 1px solid rgb(77, 119, 119);
+  padding: 5px;
 }
 </style>
