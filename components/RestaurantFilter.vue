@@ -33,7 +33,6 @@
     <div class="rate">
       <h4>Select rate of the restaurant</h4>
       <p>0 is low and 5 is high</p>
-
       <input type="range" step="1" max="5" />
     </div>
   </div>
@@ -69,6 +68,7 @@ export default {
 <style scoped>
 * {
   background-color: #eee;
+  padding: 3px;
 }
 .rate {
   align-self: center;
@@ -86,7 +86,7 @@ export default {
 .cuisines {
   display: flex;
   flex-direction: column;
-  width: 1500px;
+  width: 1000px;
 }
 
 .options-container {
@@ -96,6 +96,6 @@ export default {
 }
 
 .options-container div {
-  flex-basis: 20%;
+  flex-basis: 22%;
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="main">
     <RestaurantFilter class="RestaurantFilter" />
     <result-list></result-list>
-    <SelectedRestaurant />
+    <SelectedRestaurant class="SelectedRestaurant" />
   </div>
 </template>
 <script>
@@ -39,15 +39,20 @@ export default {
     grid-area: RestaurantFilter;
   }
 }
+
 @media screen and (max-width: 600px) {
   .main {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
     background-color: yellow;
-    grid-template-areas: "RestaurantFilter   ";
-  }
-  .RestaurantFilter {
-    display: none;
+    grid-template-areas: "RestaurantFilter ";
+    overflow: hidden;
+    .RestaurantFilter {
+      display: none;
+    }
+    .SelectedRestaurant {
+      text-align: center;
+    }
   }
 }
 </style>

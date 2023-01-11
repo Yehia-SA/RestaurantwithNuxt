@@ -1,6 +1,6 @@
 <template>
   <div>
-     <h2>Results</h2>
+    <h2>Results :</h2>
     <div class="Results" v-for="item in Restaurants" :key="item.id">
       <a href="" @click.prevent="index(item.restaurant.id)">{{
         item.restaurant.name
@@ -46,6 +46,7 @@ export default {
 <style lang="scss" scoped>
 * {
   background-color: aliceblue;
+
   a {
     text-decoration: none;
   }
@@ -56,6 +57,6 @@ export default {
 
 .Results {
   border-top: 1px solid rgb(77, 119, 119);
-  padding: 5px;
+  padding: 8px;
 }
 </style>

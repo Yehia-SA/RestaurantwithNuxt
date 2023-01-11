@@ -22,8 +22,7 @@ export default {
         "&category= " +
         Categories +
         "&start= " +
-        start +
-        "count = 100"
+        start
     );
   },
   // GetRestaurantByID
