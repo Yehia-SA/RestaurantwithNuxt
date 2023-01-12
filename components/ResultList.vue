@@ -45,7 +45,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 * {
-  background-color: aliceblue;
+  background-color: #e5e5e5;
 
   a {
     text-decoration: none;

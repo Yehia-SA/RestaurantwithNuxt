@@ -12,11 +12,8 @@
   box-sizing: border-box;
   margin: 0;
 }
-h3 {
-  padding: 0px;
-  margin: 0px;
-}
+
 html {
-  margin: 30px;
+  padding: 30px;
 }
 </style>

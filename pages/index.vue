@@ -33,7 +33,6 @@ export default {
   display: grid;
   grid-template-columns: repeat(10, auto);
   grid-template-rows: repeat(2, auto);
-  gap: 10px 20px;
   grid-template-areas: "RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter RestaurantFilter ";
   .RestaurantFilter {
     grid-area: RestaurantFilter;

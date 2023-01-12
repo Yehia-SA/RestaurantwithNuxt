@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="cuisines">
-      <h3>cuisines :</h3>
+      <h3>Cuisines :</h3>
       <div class="options-container">
         <div class="child" v-for="item in cuisines" :key="item.id">
           <input
@@ -67,7 +67,6 @@ export default {
 </script>
 <style scoped>
 * {
-  background-color: #eee;
   padding: 3px;
 }
 .rate {
